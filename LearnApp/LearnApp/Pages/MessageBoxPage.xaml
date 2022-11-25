@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<rg:PopupPage  
+    xmlns:rg="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup" 
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:mc ="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable=""
+    x:Class="LearnApp.Pages.MessageBoxPage">
+
+    <Grid HeightRequest="230" VerticalOptions="End" Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <Frame Grid.RowSpan="1" HeightRequest="180" VerticalOptions="End" CornerRadius="30" BackgroundColor="White" >
+            <Grid VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+                <StackLayout Orientation="Vertical" Spacing="10" VerticalOptions="Center" HorizontalOptions="Center">
+                    <Label x:Name="TitleTxt" Text="" FontSize="20" FontAttributes="Bold" TextColor="#1974D2" HorizontalTextAlignment="Center"/>
+                    <Label x:Name="MsgTxt" FontSize="15" Text="" TextColor="#1974D2" FontAttributes="Bold"/>
+                </StackLayout>
+            </Grid>
+        </Frame>
+        <Button Grid.Row="1" Text="OK" TextColor="White" HeightRequest="45" CornerRadius="15" FontAttributes="Bold" BackgroundColor="#1974D2" Clicked="Button_Clicked" />
+    </Grid>
+</rg:PopupPage>

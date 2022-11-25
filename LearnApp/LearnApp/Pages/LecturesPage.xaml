@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="LearnApp.Pages.LecturesPage"
+             Shell.NavBarIsVisible="False"
+             xmlns:xct="http://xamarin.com/schemas/2020/toolkit" 
+             xmlns:model="clr-namespace:LearnApp.Models"
+             xmlns:viewmodels="clr-namespace:LearnApp.PageModels"
+             x:DataType="viewmodels:LecturesPageModel"
+             xmlns:cells="clr-namespace:LearnApp.Views"
+             NavigationPage.HasNavigationBar="False"
+             BackgroundColor="#1974D2">
+    
+    <ContentPage.BindingContext>
+        <viewmodels:LecturesPageModel />
+    </ContentPage.BindingContext>
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <xct:ItemSelectedEventArgsConverter x:Key="ItemSelectedEventArgsConverter" />
+
+            <DataTemplate x:Key="Normal">
+                <ViewCell>
+                    <cells:ViewCard/>
+                </ViewCell>
+            </DataTemplate>
+
+            <DataTemplate x:Key="Special">
+                <Label Text=""/>
+            </DataTemplate>
+
+            <cells:LectureDataTemplateSelector  x:Key="LectureSelector"
+                    Normal="{StaticResource Normal}"/>
+
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ListView
+        CachingStrategy="RecycleElement"
+        GroupDisplayBinding="{Binding Key}"
+        IsPullToRefreshEnabled="True"
+           RefreshCommand="{Binding RefreshCommand}"
+           IsRefreshing="{Binding IsRefreshing}"        
+        ItemsSource="{Binding LectureGroups}"
+        SelectedItem="{Binding SelectedLecture, Mode=TwoWay}"
+        Style="{StaticResource LectureListView}"
+        ItemTemplate="{StaticResource LectureSelector}"
+        IsGroupingEnabled="True"
+        
+        >
+        <ListView.Behaviors>
+            <xct:EventToCommandBehavior
+                Command="{Binding SelectedCommand}"
+                EventArgsConverter="{StaticResource ItemSelectedEventArgsConverter}"
+                EventName="ItemSelected" />
+        </ListView.Behaviors>
+        <ListView.GroupHeaderTemplate>
+            <DataTemplate x:DataType="{x:Null}">
+                <ViewCell>
+                    <StackLayout Padding="20,0">
+                        <Label  Style="{StaticResource LabelMedium}" Text="{Binding Key}" FontSize="20" IsVisible="True" TextColor="White" FontAttributes="Bold"/>
+                    </StackLayout>
+                </ViewCell>
+            </DataTemplate>
+        </ListView.GroupHeaderTemplate>
+        <ListView.Header>
+            <StackLayout>
+                <Label  Style="{StaticResource LabelMedium}" Text="Лекции" FontSize="30" Margin="0, 50, 0, 40" HorizontalTextAlignment="Center" TextColor="White" FontAttributes="Bold"/>
+            </StackLayout>
+        </ListView.Header>
+    </ListView>
+</ContentPage>

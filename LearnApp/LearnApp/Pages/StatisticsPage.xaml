@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:forms="clr-namespace:Microcharts.Forms;assembly=Microcharts.Forms"
+             x:Class="LearnApp.Pages.StatisticsPage"
+             NavigationPage.HasNavigationBar="False"
+             BackgroundColor="#1974D2">
+    <ScrollView>
+        <StackLayout>
+            <Grid  HeightRequest="150" WidthRequest="150" HorizontalOptions="Center" Margin="0, 20, 0, 30">
+                <Ellipse Stroke="White" StrokeThickness="2" Aspect="Fill"/>
+                <Image x:Name="BannerImg" Source="data_analysis.png" HeightRequest="100" WidthRequest="100" HorizontalOptions="Center"
+                    VerticalOptions="Center" />
+            </Grid>
+            <forms:ChartView x:Name="Chart1" Chart="{Binding Chart}" BackgroundColor="#1974D2"  WidthRequest="280" HeightRequest="400"/>
+            <forms:ChartView x:Name="Chart2"   Chart="{Binding Chart}" BackgroundColor="#1974D2" WidthRequest="280" HeightRequest="400"  Margin="0,20,0,20"/>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

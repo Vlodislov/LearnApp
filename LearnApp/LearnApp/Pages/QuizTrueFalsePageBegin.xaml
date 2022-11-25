@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="LearnApp.Pages.Page1"
+             NavigationPage.HasNavigationBar="False"
+             BackgroundColor="#1974D2">
+    <ScrollView>
+        <StackLayout>
+            <Grid HeightRequest="150" WidthRequest="150" HorizontalOptions="Center" Margin="0, 20, 0, 80">
+                <Ellipse Stroke="White" StrokeThickness="2" Aspect="Fill"/>
+                <Image x:Name="BannerImg" Source="elearning.png" HeightRequest="100" WidthRequest="100" HorizontalOptions="Center"
+                    VerticalOptions="Center" />
+            </Grid>
+            <Label x:Name="pre" Text="" TextColor="White" FontSize="35" HorizontalTextAlignment="Center" FontAttributes="Bold"/>
+            <Label x:Name="kolvo" Text="" TextColor="White" FontAttributes="Bold" HorizontalTextAlignment="Center"  FontSize="25" />
+            <Button  FontSize="15"  StyleId="4" x:Name="But"  Clicked="But_Clicked" 
+                 Text="Начать" CornerRadius="10" Margin="40, 40, 40, 0" BorderWidth="1" FontAttributes="Bold" BackgroundColor="White" TextColor="#1974D2"/>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

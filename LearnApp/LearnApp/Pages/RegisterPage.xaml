@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="LearnApp.Pages.RegisterPage"
+               xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             mc:Ignorable=""
+             NavigationPage.HasNavigationBar="True"
+             BackgroundColor="#1974D2">
+    <ScrollView>
+        <StackLayout Grid.Row="0" HorizontalOptions="Center" Margin="0,38,0,50" Spacing="10">
+            <Frame CornerRadius="10" HasShadow="True">
+                <StackLayout>
+                    <Label Text="Регистрация" TextColor="#1974D2" FontSize="20" HorizontalOptions="Center" FontAttributes="Bold" Margin="0, 0, 0, 18" />
+                    <BoxView Color="#1974D2"
+             HeightRequest="2"
+             HorizontalOptions="Fill" Margin="0, 0, 0, 18"/>
+                    <Entry Text="{Binding Email}"  HorizontalOptions="FillAndExpand" TextColor="#1974D2" Placeholder=" Адрес электронной почты" FontAttributes="Bold"  PlaceholderColor="#1974D2" FontSize="18"></Entry>
+                    <Entry Text="{Binding Password}" IsPassword="True" HorizontalOptions="FillAndExpand" TextColor="#1974D2" Placeholder=" Пароль" FontAttributes="Bold" PlaceholderColor="#1974D2" FontSize="18"></Entry>
+                    <Entry Text="{Binding PasswordTwo}" IsPassword="True" HorizontalOptions="FillAndExpand" TextColor="#1974D2" Placeholder=" Повторите пароль" FontAttributes="Bold" PlaceholderColor="#1974D2" FontSize="18"></Entry>
+                </StackLayout>
+            </Frame>
+            <Button Text="Зарегистрироваться" TextColor="#1974D2" FontAttributes="Bold" FontSize="15" BackgroundColor="White" CornerRadius="10" HorizontalOptions="Center" WidthRequest="300" Margin="0, 20, 0, 0"
+                    Command="{Binding RegisterInCommand}"/>
+            <Label Text="Будет отправлено письмо на указанную почту для подтверждения кабинета студента." WidthRequest="300" TextColor="White" FontSize="15" FontAttributes="Bold" Opacity="0.5" HorizontalOptions="Center" Margin="0, 0, 0, 0"/>
+            <Label Text="Внимание! В системе присутствует проверка на простые пароли. Если вы ввели простой пароль, то система выведет ошибку." WidthRequest="300" TextColor="White" FontSize="15" FontAttributes="Bold" Opacity="0.5" HorizontalOptions="Center" Margin="0, 0, 0, 0"/>
+
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

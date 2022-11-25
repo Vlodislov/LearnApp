@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="LearnApp.Pages.SettingsPage"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             mc:Ignorable=""
+            NavigationPage.HasNavigationBar="False"
+             BackgroundColor="#1974D2"
+             >
+    <ScrollView>
+        <StackLayout>
+            <StackLayout>
+                <Label  Style="{StaticResource LabelMedium}" Text="Настройки" FontSize="30" Margin="0, 50, 0, 20" HorizontalTextAlignment="Center" TextColor="White" FontAttributes="Bold"/>
+                <StackLayout Padding="20">
+                    <Label Text="Вы вошли под" HorizontalTextAlignment="Center" TextColor="White" FontAttributes="Bold" FontSize="26" />
+                    <Frame Margin="0" Padding="10" CornerRadius="10">
+                        <Label x:Name="user" Text="{Binding User}" HorizontalTextAlignment="Center" TextColor="#1974D2" FontAttributes="Bold" FontSize="23" />
+                    </Frame>
+                    <BoxView Color="White"
+             HeightRequest="2"
+             HorizontalOptions="Fill"  Margin="150, 20, 150, 20"/>
+                    <Label Text="Выйти из профиля" TextColor="White" HorizontalTextAlignment="Center" FontAttributes="Bold" FontSize="26" />
+                    <StackLayout Padding="0, 10, 0, 0" HorizontalOptions="Center">
+                        <Button Text="Выйти" TextColor="#1974D2" FontSize="15" BackgroundColor="White" FontAttributes="Bold" WidthRequest="130" HeightRequest="40"
+                    CornerRadius="10" HorizontalOptions="Start" VerticalOptions="Start"  Command="{Binding LoginOutCommand}" />
+                    </StackLayout>
+                    <Label Text="Изменить пароль" HorizontalTextAlignment="Center" Margin="0, 20, 0,0" TextColor="White" FontAttributes="Bold" FontSize="26" />
+                    <StackLayout Padding="0, 10, 0, 0" HorizontalOptions="Center">
+                        <Button Text="Изменить" TextColor="#1974D2" FontSize="15" BackgroundColor="White" FontAttributes="Bold" WidthRequest="130" HeightRequest="40"
+                    CornerRadius="10" HorizontalOptions="Start" VerticalOptions="Start"  Command="{Binding SendEmailChangePassword}" />
+                    </StackLayout>
+                    
+                    <BoxView Color="White"
+             HeightRequest="2"
+             HorizontalOptions="Fill"  Margin="150, 20, 150, 20"/>
+                </StackLayout>
+            </StackLayout>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

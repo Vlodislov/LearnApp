@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="LearnApp.Pages.LoginPhonePage"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             mc:Ignorable=""
+             BackgroundColor="#1974D2">
+    <ScrollView>
+        <StackLayout Grid.Row="0" HorizontalOptions="Center" Margin="0,38,0,50" Spacing="10">
+            <Frame CornerRadius="10" HasShadow="True">
+                <StackLayout>
+                    <Label Text="Вход по номеру" TextColor="#1974D2" FontSize="20" HorizontalOptions="Center" FontAttributes="Bold" Margin="0, 0, 0, 18"/>
+                    <BoxView Color="#1974D2"
+             HeightRequest="2"
+             HorizontalOptions="Fill" Margin="0, 0, 0, 18"/>
+                    <Entry Text="{Binding PhoneNumber}"  HorizontalOptions="FillAndExpand" TextColor="#1974D2" Placeholder=" Номер телефона"  PlaceholderColor="#1974D2" FontAttributes="Bold" FontSize="18"></Entry>
+                    <Entry Text="{Binding Code}" IsVisible="{Binding CodeSent}" HorizontalOptions="FillAndExpand" TextColor="#1974D2" Placeholder=" Код подтверждения" FontAttributes="Bold" PlaceholderColor="#1974D2" FontSize="18"></Entry>
+                </StackLayout>
+            </Frame>
+            <Button  Text="{Binding ButtonText}" TextColor="#1974D2" FontAttributes="Bold" FontSize="15" BackgroundColor="White" CornerRadius="3" HorizontalOptions="Center" WidthRequest="300" Margin="0, 20, 0, 0"
+                    Command="{Binding NextCommand}"/>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

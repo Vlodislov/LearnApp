@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Grid xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="LearnApp.Views.ViewTestCard"
+       Padding="10"
+      xmlns:models="clr-namespace:LearnApp.Models"
+       x:DataType="models:Test"
+            BackgroundColor="#1974D2">
+    <Frame  x:Name="frame" Style="{StaticResource LectureCard}" BorderColor="{Binding Complited}" BackgroundColor="White" Margin="15,0,15,0" >
+        <StackLayout Orientation="Horizontal">
+            <StackLayout VerticalOptions="Center">
+                <Label
+                        Style="{StaticResource LabelLarge}"
+                        Text="{Binding Title}"
+                        FontSize="22"
+                        VerticalOptions="Center"
+                        FontAttributes="Bold"
+                        TextColor="{Binding Complited}"/>
+                <Label
+                        Style="{StaticResource LabelLarge}"
+                        Text="{Binding Chapter}"
+                        VerticalOptions="Center"
+                        FontAttributes="Bold"
+                        TextColor="#1974D2"
+                    FontSize="13"/>
+            </StackLayout>
+        </StackLayout>
+    </Frame>
+</Grid>

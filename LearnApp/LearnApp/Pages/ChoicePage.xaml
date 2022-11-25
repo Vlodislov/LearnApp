@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="LearnApp.Pages.ChoicePage"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             mc:Ignorable=""
+             Title="SharpNyan"
+             BackgroundColor="White"
+             NavigationPage.BackButtonTitle="False">
+    <ScrollView >
+        <StackLayout Grid.Row="0" HorizontalOptions="Center" Margin="0,38,0,50" Spacing="10">
+            <Label Text="Вход в кабинет студента" TextColor="#256CC1" FontSize="20" HorizontalOptions="Center" FontAttributes="Bold" Margin="0, 0, 0, 30"/>
+            <Entry Text="{Binding Email}"  HorizontalOptions="FillAndExpand" TextColor="#256CC1" Placeholder=" Почта"  PlaceholderColor="#256CC1" FontSize="18"></Entry>
+            <Entry Text="{Binding Password}" IsPassword="True" HorizontalOptions="FillAndExpand" TextColor="#256CC1" Placeholder=" Пароль" PlaceholderColor="#256CC1" FontSize="18"></Entry>
+            <Button Text="Войти" TextColor="White" FontSize="15" BackgroundColor="#256CC1" CornerRadius="3" HorizontalOptions="Center" WidthRequest="300" Margin="0, 20, 0, 0"
+                    Command="{Binding LoginInCommand}"/>
+            <Button Text="Регистрация" TextColor="White" FontSize="15" BackgroundColor="#256CC1" CornerRadius="3" HorizontalOptions="Center" WidthRequest="300"
+                    Command="{Binding RegisterInCommand}"/>
+            <Button Text="Забыли пароль?" TextColor="#256CC1" FontSize="15" BackgroundColor="White" CornerRadius="3" HorizontalOptions="Center" WidthRequest="300"
+                    Command="{Binding LoginInCommand}"/>
+            <Label Text="ИЛИ" TextColor="#256CC1" FontSize="20" HorizontalOptions="Center"/>
+            <Button Text="Войти по номеру" TextColor="White" FontSize="15" BackgroundColor="#256CC1" CornerRadius="3" HorizontalOptions="Center" WidthRequest="300"
+                    Command="{Binding LoginInCommand}"/>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>
